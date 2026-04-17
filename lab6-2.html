@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Birim Dönüştürücü - Melih Enes Karmil</title>
+  <link rel="stylesheet" href="styles/style.css" />
+  <style>
+    .lab-container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .donusturucu-kutu {
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 28px;
+      background-color: #ffffff;
+      margin-bottom: 16px;
+    }
+
+    .donusturucu-kutu h2 {
+      font-size: 22px;
+      font-weight: bold;
+      color: #1a1a2e;
+      margin-bottom: 16px;
+    }
+
+    .donusturucu-kutu label {
+      display: block;
+      font-size: 13px;
+      color: #555;
+      margin-bottom: 6px;
+      font-family: Arial, sans-serif;
+    }
+
+    .donusturucu-kutu input[type="text"],
+    .donusturucu-kutu select {
+      display: block;
+      width: 100%;
+      padding: 9px 12px;
+      margin-bottom: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+      font-family: Arial, sans-serif;
+      color: #2c2c2c;
+      background-color: #fafafa;
+      box-sizing: border-box;
+    }
+
+    .donusturucu-kutu input[type="text"]:focus,
+    .donusturucu-kutu select:focus {
+      outline: none;
+      border-color: #1a1a2e;
+    }
+
+    .btn-hesapla {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background-color: #2979ff;
+      color: #ffffff;
+      border: none;
+      border-radius: 4px;
+      font-size: 15px;
+      font-family: Arial, sans-serif;
+      cursor: pointer;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+      transition: background-color 0.3s;
+    }
+
+    .btn-hesapla:hover {
+      background-color: #1a5fcc;
+    }
+
+    .sonuc-kutu {
+      background-color: #f0f4ff;
+      border: 1px solid #c0ccff;
+      border-radius: 4px;
+      padding: 14px;
+      text-align: center;
+      font-size: 16px;
+      font-weight: bold;
+      color: #1a1a2e;
+      display: none;
+    }
+
+    .btn-geri {
+      display: inline-block;
+      margin: 30px 0 0 0;
+      background-color: #1a1a2e;
+      color: #e8a838;
+      text-decoration: none;
+      padding: 10px 24px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-family: Arial, sans-serif;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .btn-geri:hover {
+      background-color: #e8a838;
+      color: #1a1a2e;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Anasayfa</a></li>
+      <li><a href="hakkinda.html">Hakkında</a></li>
+      <li><a href="hizmetler.html">Hizmetler</a></li>
+      <li><a href="iletisim.html">İletişim</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Birim Dönüştürücü</h1>
+    <p>Hafta 6 · Uygulama 2</p>
+  </header>
+
+  <div class="lab-container">
+
+    <div class="donusturucu-kutu">
+      <h2>Birim Dönüştürücü</h2>
+
+      <label>Değer Giriniz:</label>
+      <input type="text" id="deger" placeholder="50" />
+
+      <label>Dönüşüm Tipi:</label>
+      <select id="tip">
+        <option value="celsius-fahrenheit">Celsius -&gt; Fahrenheit</option>
+        <option value="metre-kilometre">Metre -&gt; Kilometre</option>
+        <option value="kilogram-gram">Kilogram -&gt; Gram</option>
+        <option value="fahrenheit-celsius">Fahrenheit -&gt; Celsius</option>
+        <option value="kilometre-metre">Kilometre -&gt; Metre</option>
+        <option value="gram-kilogram">Gram -&gt; Kilogram</option>
+        <option value="celsius-kelvin">Celsius -&gt; Kelvin</option>
+        <option value="kelvin-celsius">Kelvin -&gt; Celsius</option>
+      </select>
+
+      <button class="btn-hesapla" onclick="donustur()">Hesapla</button>
+
+      <div class="sonuc-kutu" id="sonuc"></div>
+    </div>
+
+    <a href="index.html" class="btn-geri">← Ana Sayfaya Dön</a>
+  </div>
+
+  <footer>
+    <p>© 2025 Melih Enes Karmil · Tüm hakları saklıdır.</p>
+  </footer>
+
+  <script>
+    function donustur() {
+      var deger = parseFloat(document.getElementById("deger").value);
+      var tip = document.getElementById("tip").value;
+
+      if (isNaN(deger)) {
+        alert("Lütfen geçerli bir sayı girin!");
+        return;
+      }
+
+      var sonuc;
+
+      if (tip === "celsius-fahrenheit") {
+        sonuc = (deger * 9/5) + 32;
+      } else if (tip === "fahrenheit-celsius") {
+        sonuc = (deger - 32) * 5/9;
+      } else if (tip === "celsius-kelvin") {
+        sonuc = deger + 273.15;
+      } else if (tip === "kelvin-celsius") {
+        sonuc = deger - 273.15;
+      } else if (tip === "metre-kilometre") {
+        sonuc = deger / 1000;
+      } else if (tip === "kilometre-metre") {
+        sonuc = deger * 1000;
+      } else if (tip === "kilogram-gram") {
+        sonuc = deger * 1000;
+      } else if (tip === "gram-kilogram") {
+        sonuc = deger / 1000;
+      }
+
+      var sonucEl = document.getElementById("sonuc");
+      sonucEl.textContent = "Sonuç: " + sonuc.toLocaleString("tr-TR", {maximumFractionDigits: 4});
+      sonucEl.style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
