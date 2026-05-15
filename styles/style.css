@@ -1,3 +1,6 @@
+/* ===== GOOGLE FONTLARI (Uzay Havası İçin) ===== */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap');
+
 /* ===== GENEL SIFIRLAMALAR ===== */
 * {
   margin: 0;
@@ -6,16 +9,21 @@
 }
 
 body {
-  font-family: Georgia, 'Times New Roman', serif;
-  background-color: #f4f1ec;
-  color: #2c2c2c;
+  font-family: 'Space Grotesk', sans-serif;
+  /* Derin uzay hissi veren karanlık gradient arka plan */
+  background: radial-gradient(circle at top right, #1b1236, #0a0a1a 50%, #000000);
+  color: #d1d1e9;
   line-height: 1.7;
+  min-height: 100vh;
 }
 
 /* ===== NAVİGASYON ===== */
 nav {
-  background-color: #1a1a2e;
+  background-color: rgba(10, 10, 26, 0.8);
+  backdrop-filter: blur(10px); /* Cam efekti */
   padding: 0 40px;
+  border-bottom: 1px solid #3a0088;
+  text-align: center;
 }
 
 nav ul {
@@ -30,52 +38,50 @@ nav ul li {
 
 nav ul li a {
   display: inline-block;
-  color: #c9b99a;
+  color: #a8a8ff;
   text-decoration: none;
   padding: 18px 24px;
   font-size: 15px;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  font-family: Arial, sans-serif;
-  transition: color 0.3s;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
-/* Hiyerarşik seçici 1 */
 nav ul li a:hover {
-  color: #ffffff;
+  color: #00ffff;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
 }
 
 nav ul li a.active {
-  color: #ffffff;
-  border-bottom: 3px solid #e8a838;
+  color: #00ffff;
+  border-bottom: 3px solid #00ffff;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
 }
 
 /* ===== HEADER ===== */
 header {
-  background-color: #1a1a2e;
-  color: #f4f1ec;
+  background: transparent;
+  color: #ffffff;
   text-align: center;
   padding: 60px 40px 50px;
-  border-bottom: 5px solid #e8a838;
+  border-bottom: 2px solid #b900ff;
+  box-shadow: 0 10px 30px rgba(185, 0, 255, 0.1);
 }
 
 header h1 {
   font-size: 46px;
-  font-weight: normal;
-  letter-spacing: 3px;
+  font-weight: 700;
+  letter-spacing: 4px;
   margin-bottom: 12px;
+  text-transform: uppercase;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
 }
 
 header p {
-  font-size: 17px;
-  color: #c9b99a;
-  letter-spacing: 1px;
-}
-
-/* ===== GRUP SEÇİCİ ===== */
-h1, h2, h3 {
-  font-weight: normal;
-  letter-spacing: 1px;
+  font-size: 18px;
+  color: #00ffff;
+  letter-spacing: 2px;
 }
 
 /* ===== ANA ALAN ===== */
@@ -87,22 +93,26 @@ main {
   gap: 30px;
 }
 
-/* ===== SOL İÇERİK ===== */
+/* ===== SOL İÇERİK (Cam Görünümlü Kart) ===== */
 .content {
   flex: 2;
-  background-color: #ffffff;
+  background-color: rgba(20, 20, 40, 0.5);
+  backdrop-filter: blur(12px);
   padding: 36px 40px;
-  border-top: 4px solid #e8a838;
+  border: 1px solid rgba(0, 255, 255, 0.1);
+  border-top: 4px solid #00ffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
 }
 
-/* Hiyerarşik seçici 2 */
 .content h2 {
-  font-size: 22px;
-  color: #1a1a2e;
-  margin-bottom: 12px;
-  margin-top: 24px;
-  border-left: 4px solid #e8a838;
+  font-size: 24px;
+  color: #00ffff;
+  margin-bottom: 16px;
+  margin-top: 30px;
+  border-left: 4px solid #b900ff;
   padding-left: 12px;
+  font-weight: 600;
 }
 
 .content h2:first-child {
@@ -110,166 +120,189 @@ main {
 }
 
 .content p {
-  font-size: 15px;
-  color: #444;
+  font-size: 16px;
+  color: #b0b0d0;
   line-height: 1.9;
   text-align: justify;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
-/* ===== FLEXBOX SAYFASINA LİNK BUTONU ===== */
-.btn-flexbox {
-  display: inline-block;
-  background-color: #1a1a2e;
-  color: #e8a838;
-  text-decoration: none;
-  padding: 12px 28px;
-  border-radius: 4px;
-  font-family: Arial, sans-serif;
-  font-size: 15px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-top: 8px;
-}
-
-.btn-flexbox:hover {
-  background-color: #e8a838;
-  color: #1a1a2e;
-}
-
-/* ===== SAĞ SIDEBAR ===== */
+/* ===== SAĞ SIDEBAR (Cam Görünümlü Kart) ===== */
 .sidebar {
   flex: 1;
-  background-color: #1a1a2e;
-  color: #f4f1ec;
+  background-color: rgba(20, 20, 40, 0.5);
+  backdrop-filter: blur(12px);
   padding: 30px 28px;
-  border-top: 4px solid #e8a838;
+  border: 1px solid rgba(185, 0, 255, 0.1);
+  border-top: 4px solid #b900ff;
+  border-radius: 12px;
   align-self: flex-start;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
 }
 
 .sidebar h2 {
-  font-size: 18px;
-  color: #e8a838;
+  font-size: 20px;
+  color: #b900ff;
   margin-bottom: 12px;
-  margin-top: 20px;
+  margin-top: 25px;
+  font-weight: 600;
 }
 
 .sidebar h2:first-child {
   margin-top: 0;
 }
 
-/* Hiyerarşik seçici 3 */
 .sidebar p {
   font-size: 14px;
-  color: #c9b99a;
+  color: #9090b0;
   line-height: 1.8;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
-.sidebar a {
-  color: #e8a838;
+/* ===== BUTONLAR (Görseldeki Sorunu Çözen Kısım) ===== */
+.btn-flexbox, .sidebar-btn {
+  display: block;
+  background: linear-gradient(135deg, #10102a, #2a0a4a);
+  color: #00ffff;
   text-decoration: none;
-  font-size: 14px;
+  padding: 14px 20px;
+  border-radius: 6px;
+  border: 1px solid #3a0088;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 25px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
-.sidebar a:hover {
+.btn-flexbox:hover, .sidebar-btn:hover {
+  background: linear-gradient(135deg, #2a0a4a, #3a0088);
   color: #ffffff;
+  border-color: #00ffff;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+  transform: translateY(-3px);
 }
 
 /* ===== FOOTER ===== */
 footer {
-  background-color: #1a1a2e;
-  color: #c9b99a;
+  background-color: rgba(10, 10, 26, 0.9);
+  color: #707090;
   text-align: center;
   padding: 24px;
   font-size: 14px;
   margin-top: 40px;
-  border-top: 3px solid #e8a838;
-  font-family: Arial, sans-serif;
+  border-top: 2px solid #3a0088;
   letter-spacing: 1px;
 }
 
 /* ===== İLETİŞİM FORMU ===== */
 .contact-container {
-  width: 600px;
+  width: 100%;
+  max-width: 600px;
   margin: 40px auto;
   padding: 40px;
-  border: 2px solid #1a1a2e;
-  border-radius: 8px;
-  background-color: #ffffff;
+  background-color: rgba(20, 20, 40, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid #00ffff;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
 }
 
 .contact-container h2 {
-  font-size: 22px;
-  color: #1a1a2e;
+  font-size: 26px;
+  color: #00ffff;
   margin-bottom: 24px;
-  border-left: 4px solid #e8a838;
+  border-left: 4px solid #b900ff;
   padding-left: 12px;
 }
 
 .contact-container label {
   display: block;
   font-size: 14px;
-  font-family: Arial, sans-serif;
-  color: #2c2c2c;
-  margin-bottom: 6px;
-  font-weight: bold;
+  color: #a8a8ff;
+  margin-bottom: 8px;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
-/* Çoklu seçici - ödev şartı */
 .contact-container input,
 .contact-container select,
 .contact-container textarea {
   display: block;
   width: 100%;
-  padding: 10px 14px;
+  padding: 12px 16px;
   margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 14px;
-  font-family: Arial, sans-serif;
-  color: #2c2c2c;
-  background-color: #fafafa;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid #3a0088;
+  border-radius: 6px;
+  font-size: 15px;
+  font-family: 'Space Grotesk', sans-serif;
+  color: #ffffff;
+  transition: all 0.3s ease;
 }
 
 .contact-container input:focus,
 .contact-container select:focus,
 .contact-container textarea:focus {
   outline: none;
-  border-color: #1a1a2e;
-  background-color: #fff;
+  border-color: #00ffff;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+  background-color: rgba(10, 10, 30, 0.8);
 }
 
 textarea {
   resize: vertical;
 }
 
-button[type="submit"] {
-  background-color: #1a1a2e;
-  color: #e8a838;
+/* Form Submit ve Reset Butonları */
+button[type="submit"], .btn-reset {
+  background: linear-gradient(135deg, #005f5f, #00aaaa);
+  color: #ffffff;
   border: none;
-  padding: 12px 36px;
+  padding: 14px 36px;
   font-size: 15px;
-  font-family: Arial, sans-serif;
-  letter-spacing: 1px;
-  border-radius: 4px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  letter-spacing: 2px;
+  border-radius: 6px;
   cursor: pointer;
   text-transform: uppercase;
+  transition: all 0.3s ease;
 }
 
 button[type="submit"]:hover {
-  background-color: #e8a838;
-  color: #1a1a2e;
+  background: linear-gradient(135deg, #00aaaa, #00ffff);
+  color: #000000;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
 }
 
-/* ===== RADIO & CHECKBOX GRUPLARI ===== */
+.btn-reset {
+  background: linear-gradient(135deg, #5a0020, #aa0040);
+}
+
+.btn-reset:hover {
+  background: linear-gradient(135deg, #aa0040, #ff0055);
+  box-shadow: 0 0 15px rgba(255, 0, 85, 0.5);
+}
+
+.form-buttons {
+  display: flex;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+/* ===== RADIO & CHECKBOX ===== */
 .radio-group,
 .checkbox-group {
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  border: 1px solid #3a0088;
+  border-radius: 6px;
   padding: 14px 18px;
   margin-bottom: 20px;
-  background-color: #fafafa;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .radio-label,
@@ -278,57 +311,7 @@ button[type="submit"]:hover {
   align-items: center;
   gap: 10px;
   font-size: 14px;
-  font-family: Arial, sans-serif;
-  color: #2c2c2c;
-  margin-bottom: 8px;
-  font-weight: normal;
+  color: #d1d1e9;
+  margin-bottom: 10px;
   cursor: pointer;
-}
-
-.radio-label:last-child,
-.checkbox-label:last-child {
-  margin-bottom: 0;
-}
-
-.radio-label input,
-.checkbox-label input {
-  width: auto;
-  margin-bottom: 0;
-  cursor: pointer;
-}
-
-/* ===== FORM BUTONLARI ===== */
-.form-buttons {
-  display: flex;
-  gap: 16px;
-  margin-top: 8px;
-}
-
-.btn-reset {
-  background-color: #c0392b;
-  color: #ffffff;
-  border: none;
-  padding: 12px 36px;
-  font-size: 15px;
-  font-family: Arial, sans-serif;
-  letter-spacing: 1px;
-  border-radius: 4px;
-  cursor: pointer;
-  text-transform: uppercase;
-}
-
-.btn-reset:hover {
-  background-color: #e74c3c;
-}
-
-.btn-reset:hover {
-  background-color: #e74c3c;
-}
-
-/* ===== CONTENT DÜZELTME ===== */
-.content h2,
-.content p,
-.content .btn-flexbox {
-  display: block;
-  width: 100%;
 }
